@@ -6,6 +6,24 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Opening_Scene.unity
+    guid: 9f60902a0e4364df7b7618e9990cebe4
+  - enabled: 0
     path: Assets/Scenes/game.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Tinylytics_AnalyticsTool/_DemoScene/ExampleScene.unity
+    guid: 7f93fe4c06fe6394ab44b831d66289c5
+  - enabled: 1
+    path: Assets/Scenes/red.unity
+    guid: b7c6c6dc21f1c40ee8612bce8423b3d4
+  - enabled: 1
+    path: Assets/Scenes/ending.unity
+    guid: 6f5b6edfe0830489b862535349e5915a
+  - enabled: 1
+    path: Assets/Scenes/trial_indicator.unity
+    guid: 3922cd55a30584e3781370b6b1a0330c
+  - enabled: 1
+    path: Assets/Scenes/blue.unity
+    guid: 8261bf211670c403587ad1dc58faeb61
   m_configObjects: {}
