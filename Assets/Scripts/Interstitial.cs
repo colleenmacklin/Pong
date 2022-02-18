@@ -40,14 +40,15 @@ public class Interstitial : MonoBehaviour
 
     void MessagePlayer()
     {
-        message.text = "trial " + trialNum + "\n"+"Press Space to play again";
+        var _trialNumberForHumans = trialNum + 1; //lol this is because trialNum starts at 0 (as do all array values) but people don't start counting with zero...mostly...
+        message.text = "trial " + _trialNumberForHumans + "\n" +"Press Space to play again";
     }
 
     void newTrial()
     {
 
-        Tinylytics.AnalyticsManager.LogCustomMetric("New Trial Number: ", trialNum.ToString());
-        Tinylytics.AnalyticsManager.LogCustomMetric("New Trial Name: ", trialName);
+        //Tinylytics.AnalyticsManager.LogCustomMetric("New Trial Number: ", trialNum.ToString());
+        //Tinylytics.AnalyticsManager.LogCustomMetric("New Trial Name: ", trialName);
 
         SceneManager.LoadScene(trialName);
 

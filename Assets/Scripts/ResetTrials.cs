@@ -16,6 +16,9 @@ public class ResetTrials : MonoBehaviour
         trialName = GlobalControl.Instance.trialName;
         trials = GlobalControl.Instance.trials;
 
+        //if you want to log the time when the game ended, to compare with the time the game started, use this:
+        //Tinylytics.AnalyticsManager.LogCustomMetric("game ended: ", "time:" + System.DateTime.Now);
+
     }
 
     public void SaveGame()
@@ -25,24 +28,4 @@ public class ResetTrials : MonoBehaviour
         GlobalControl.Instance.trials = trials;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown("space"))
-        {
-            newPlayer();
-        }
-
-    }
-
-
-    void newPlayer()
-    {
-
-        Tinylytics.AnalyticsManager.LogCustomMetric("game ended: ", "time:" + System.DateTime.Now);
-
-        Destroy(GlobalControl.Instance); // this destroys the global trial list we initiated at game opening
-
-        SceneManager.LoadScene("Opening_Scene");
-
-    }
 }

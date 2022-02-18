@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 650185662}
-  winningScore: 2
+  winningScore: 3
   playerScoreText: {fileID: 383267725}
   computerScoreText: {fileID: 496432321}
   trialNum: 0

@@ -426,13 +426,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Welcome to Pong!
-
-    Control the Paddle with "W" and "S"
+  m_text: 'Thank You for Playing!
 
 
-    Press
-    Space to Continue'
+    here you could drop in a URL, or add a button
+    to go to a survey, if you want'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f1d22a25be8442d4872b00b633c5adf, type: 2}
   m_sharedMaterial: {fileID: -3076756472126150823, guid: 5f1d22a25be8442d4872b00b633c5adf, type: 2}

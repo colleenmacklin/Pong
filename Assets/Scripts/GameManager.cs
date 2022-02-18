@@ -20,16 +20,18 @@ public class GameManager : MonoBehaviour
     public string trialName;
     public List<string> trials;
 
+    private string sceneName;
+
     void Start()
     {
         trialNum = GlobalControl.Instance.trialNum;
         trialName = GlobalControl.Instance.trialName;
         trials = GlobalControl.Instance.trials;
+
     }
 
     public void SaveGame()
     {
-        print("saving game, trial: " + trialNum);
         GlobalControl.Instance.trialNum = trialNum;
         GlobalControl.Instance.trialName = trialName;
         GlobalControl.Instance.trials = trials;
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour
         _playerScore++;
         this.playerScoreText.text = _playerScore.ToString();
         ResetRound();
+        
     }
 
     public void ComputerScores()
@@ -50,6 +53,7 @@ public class GameManager : MonoBehaviour
         _computerScore++;
         this.computerScoreText.text = _computerScore.ToString();
         ResetRound();
+
     }
 
 
@@ -57,33 +61,54 @@ public class GameManager : MonoBehaviour
     {
         if (_playerScore == winningScore || _computerScore == winningScore)
         {
+            trialNum = trialNum + 1;
+            SaveGame();
             newTrial();
+            this.ball.ResetPosition(); //ball should stop moving once game is over
         }
-        else {
-            print("keep playing");
-        this.ball.ResetPosition();
-        this.ball.AddStartingForce();
-    }
+        else
+        {
+            this.ball.ResetPosition();
+            StartCoroutine(pauseBall()); //waits .5 sec to serve the ball
+        }
+
+        
     }
 
     void newTrial()
     {
-        trialNum = trialNum + 1;
-        print("trialnum: " + trialNum);
-        if (trialNum >= trials.Count)
+        if (trialNum < trials.Count)
         {
-            //tinyLytics post ending time
-
-            SceneManager.LoadScene("ending");
-
-        }else
-
-        {
-            //increase trial num
             trialName = trials[trialNum];
             SaveGame();
 
-            SceneManager.LoadScene("trial_indicator");
+            sceneName = "interstitial"; //this name is used in the Coroutine, which is basically just a pause timer for 3 seconds.
+
+            StartCoroutine(WaitForSceneLoad());
         }
+        else { endGame(); }
+
+
+    }
+
+    void endGame()
+    {
+        //if you want to know how lond the entire set of trials took, you can add your tinyLytics call here
+        sceneName = "ending"; //this name is used in the Coroutine, which is basically just a pause timer for 3 seconds.
+        StartCoroutine(WaitForSceneLoad());
+
+    }
+
+    private IEnumerator WaitForSceneLoad()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(sceneName);
+    }
+
+    private IEnumerator pauseBall()
+    {
+        yield return new WaitForSeconds(0.5f);
+        this.ball.AddStartingForce();
+
     }
 }

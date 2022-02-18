@@ -18,12 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/red.unity
     guid: b7c6c6dc21f1c40ee8612bce8423b3d4
   - enabled: 1
-    path: Assets/Scenes/ending.unity
-    guid: 6f5b6edfe0830489b862535349e5915a
-  - enabled: 1
-    path: Assets/Scenes/trial_indicator.unity
-    guid: 3922cd55a30584e3781370b6b1a0330c
-  - enabled: 1
     path: Assets/Scenes/blue.unity
     guid: 8261bf211670c403587ad1dc58faeb61
+  - enabled: 1
+    path: Assets/Scenes/interstitial.unity
+    guid: 3922cd55a30584e3781370b6b1a0330c
+  - enabled: 1
+    path: Assets/Scenes/ending.unity
+    guid: 6f5b6edfe0830489b862535349e5915a
   m_configObjects: {}
