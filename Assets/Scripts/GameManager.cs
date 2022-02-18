@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public Ball ball;
-    public int winningScore;
 
     public Text playerScoreText;
     public Text computerScoreText;
@@ -19,6 +18,7 @@ public class GameManager : MonoBehaviour
     public int trialNum;
     public string trialName;
     public List<string> trials;
+    public int winningScore; //set this value in both scenes!
 
     private string sceneName;
 
@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
         trialNum = GlobalControl.Instance.trialNum;
         trialName = GlobalControl.Instance.trialName;
         trials = GlobalControl.Instance.trials;
-
     }
 
     public void SaveGame()

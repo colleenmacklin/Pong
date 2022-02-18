@@ -10,6 +10,7 @@ public class StartGame : MonoBehaviour
     public int trialNum;
     public string trialName;
     public List<string> trials = new();
+    public int winningScore;
 
     private void Start()
     {
